@@ -1,0 +1,51 @@
+Version 0.1
+==============================
+
+Features 
+--------------
+ 1 upgrade script to create initial tables
+ 2 signup and login page for user
+
+Implementation 
+------------------------
+1. Installation
+    1.1 check if this is a new installation. We do this by checking if we have a version table. if there is no version table, then new installation, else upgrade. 
+    1.2 Upgrade 
+        1.2.1 check if the version to make sure you can upgrade from that version. this will be part of the code. from code
+        1.2.2 run the setup script. 
+        1.2.3 update the status = stable 
+
+    1.3 new Installation
+        2.1 create version table, update it to version, status = upgrading
+        2.2 create the new tables. This has to contain all the tables (?).
+        2.3 set the status to stable
+
+2. Signup 
+    2.1 landing page shows option to login or signup
+    2.2 Signup page
+        2.2.1 collect username and password, and user details (name)
+        2.2.2 check if user already exists
+        2.2.3 if user exists, display error.
+        2.2.4 if user doesn't exist, then create entry in database
+        2.2.5 goto welcome page
+    2.3 Login page (same as landing)
+        2.3.1 collect username and password
+        2.3.2 check in db, see if user is valid
+        2.3.3 if valid, welcome page
+        2.3.4 else display error,  back to landing page
+
+Tables
+--------------------------
+ - Version Table 
+    Version (D2.2.2), Status (stable | corrupted | upgrading), Desc
+
+ - User id table 
+    id, username
+
+ - user details table
+    id, username, Name, other details
+
+ - user Password
+    id, password
+
+

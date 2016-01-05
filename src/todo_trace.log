@@ -1,0 +1,74 @@
+2016-01-05 9:47:49 - ERROR --> ************************************************************* 
+2016-01-05 9:47:49 - ERROR --> *
+*  TODO LIST  SETUP 
+*
+ 
+2016-01-05 9:47:49 - ERROR --> ************************************************************* 
+2016-01-05 9:47:49 - INFO  --> Main - Open connection to db 
+2016-01-05 9:47:49 - INFO  --> Checking if this is new deployment 
+2016-01-05 9:47:49 - INFO  --> IsExisting_Version : Enter 
+2016-01-05 9:47:49 - INFO  --> IsExisting_Version : Exit -  
+2016-01-05 9:47:49 - INFO  --> its a new deployment. Create table 
+2016-01-05 9:47:49 - INFO  --> CreateTable_Version : Enter 
+2016-01-05 9:47:50 - INFO  --> CreateTable_Version : Status - 1 
+2016-01-05 9:47:50 - INFO  --> Insert row into table 
+2016-01-05 9:47:50 - INFO  --> InsertInto_Version : Enter 
+2016-01-05 9:47:50 - INFO  --> InsertInto_Version : 1 
+2016-01-05 9:47:50 - INFO  --> checking the version, and if it is upgradable 
+2016-01-05 9:47:50 - INFO  --> Moving database to Upgrading state 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState - Enter (1) 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState - Get last row of version table 
+2016-01-05 9:47:50 - INFO  --> SelectLastRowFrom_Version : Enter 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState - Update last row with the db state 
+2016-01-05 9:47:50 - INFO  --> UpdateInto_Version : Enter 
+2016-01-05 9:47:50 - INFO  --> UpdateInto_Version : 1 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState status - 1 
+2016-01-05 9:47:50 - INFO  --> Perform actual upgrade operation 
+2016-01-05 9:47:50 - INFO  --> V0_0_Upgrade - Enter  
+2016-01-05 9:47:50 - INFO  --> IsExisting_Password : Enter 
+2016-01-05 9:47:50 - INFO  --> IsExisting_Password : Exit -  
+2016-01-05 9:47:50 - INFO  --> IsExisting Password table status :false 
+2016-01-05 9:47:50 - INFO  --> CreateTable_Password : Enter 
+2016-01-05 9:47:50 - INFO  --> CreateTable_Password : Status - 1 
+2016-01-05 9:47:50 - INFO  --> Create Password table status : true 
+2016-01-05 9:47:50 - INFO  --> IsExisting_UserDetails : Enter 
+2016-01-05 9:47:50 - INFO  --> IsExisting_UserDetails : Exit -  
+2016-01-05 9:47:50 - INFO  --> IsExisting UserDetails table status :false 
+2016-01-05 9:47:50 - INFO  --> CreateTable_UserDetails : Enter 
+2016-01-05 9:47:50 - INFO  --> CreateTable_UserDetails : Status - 1 
+2016-01-05 9:47:50 - INFO  --> Create UserDetails table status : true 
+2016-01-05 9:47:50 - INFO  --> IsExisting_TodoList : Enter 
+2016-01-05 9:47:50 - INFO  --> IsExisting_TodoList : Exit -  
+2016-01-05 9:47:50 - INFO  --> IsExisting TodoList table status :false 
+2016-01-05 9:47:50 - INFO  --> CreateTable_TodoList : Enter 
+2016-01-05 9:47:50 - INFO  --> CreateTable_TodoList : Status - 1 
+2016-01-05 9:47:50 - INFO  --> Create TodoList table status : true 
+2016-01-05 9:47:50 - INFO  --> Exit form V_Major0_Minor0_Upgrade with status :true 
+2016-01-05 9:47:50 - INFO  --> moving database to ready state 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState - Enter (0) 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState - Get last row of version table 
+2016-01-05 9:47:50 - INFO  --> SelectLastRowFrom_Version : Enter 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState - Update last row with the db state 
+2016-01-05 9:47:50 - INFO  --> UpdateInto_Version : Enter 
+2016-01-05 9:47:50 - INFO  --> UpdateInto_Version : 1 
+2016-01-05 9:47:50 - INFO  --> UpdateDatabaseState status - 1 
+2016-01-05 9:47:50 - ERROR --> End of program 
+2016-01-05 9:48:15 - ERROR --> ************************************************************* 
+2016-01-05 9:48:15 - ERROR --> *
+*  TODO LIST  DROP 
+*
+ 
+2016-01-05 9:48:15 - ERROR --> ************************************************************* 
+2016-01-05 9:48:15 - INFO  --> Main - Open connection to db 
+2016-01-05 9:48:15 - INFO  --> DropTable_Version : enter 
+2016-01-05 9:48:15 - INFO  --> DeleteTable_Version : Status - 1 
+2016-01-05 9:48:15 - INFO  --> DropTable_TodoList : enter 
+2016-01-05 9:48:16 - INFO  --> DeleteTable_TodoList : Status - 1 
+2016-01-05 9:48:16 - INFO  --> Drop TodoList Table status : true 
+2016-01-05 9:48:16 - INFO  --> DropTable_UserDetails : enter 
+2016-01-05 9:48:16 - INFO  --> DeleteTable_UserDetails : Status - 1 
+2016-01-05 9:48:16 - INFO  --> Drop Password table status : true 
+2016-01-05 9:48:16 - INFO  --> DropTable_Password : enter 
+2016-01-05 9:48:16 - INFO  --> DeleteTable_Password : Status - 1 
+2016-01-05 9:48:16 - INFO  --> Drop Password table status : true 
+2016-01-05 9:48:16 - INFO  --> End of program 

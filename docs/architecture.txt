@@ -1,0 +1,113 @@
+Architecture document for Todo app
+-------------------------------------
+
+Following the mvc pattern, we will organize our code to adhear to the pattern. MVC relies on seperation between each of the layers. We shall take a similar approach. ULtimately this is a crud application, albeiet a very simple one. 
+
+the will be our orgaization. 
+
+=====================================================
+Tables -    this is the sql tables 
+
+-----------------------------------------------------
+TableModel - basic curd operations for the table. 
+
+-----------------------------------------------------
+object Model  Object representation of the data
+
+-----------------------------------------------------
+Model - will contain the business logic
+
+-----------------------------------------------------
+View-Model
+
+-----------------------------------------------------
+Controller      || View 
+
+=====================================================
+
+
+1. Tables
+~~~~~~~~~~~~~~~~~~~
+
+Our application is very simple, and thus we have ery few tables. The following are the list of table snad the fields. 
+
+1.1 Version Table
+    The table is sused to store teh version information of the application. Everytime we want to upgrade, we consult this table to see if upgrading from the current version is possible. Thus the setup script will need to change each tiem. 
+
+    Fields
+    --------------
+
+    || id   || Major Version    || Minor Version    || Status   || 
+
+    The major and inor version indicates the version of the app. 
+    Status is used to indicate teh state of the database. If we hapen to run into any issue during the uprade of database, we can change the status of the database to unstable or something similar. Status will have { good, bad, upgrading, initialized } as the possible values. 
+
+
+1.2 User table
+    A simple user information table. For our application, we don't need much. just the user name would suffice. We can additionally collect additional information. but for now, we'll stick with the two fields. 
+
+    Fields
+    -----------
+
+    ||  UID     ||  Username        ||
+
+
+1.3 Password table
+    This will contian the login data for user. The login id and the passwrd. ideally we should be running something likea md5 or similar algorithm on the password string before storing itin the table. but for our app, we'll store the password directly. sometime later, we can add this feature. 
+
+    fields
+    --------------
+    || UID      || login id         || password         ||
+
+
+1.4 todolist table
+    The main reason we are todo-ing. This will contain the todo list. The fields are self explainatory. 
+
+    Fields
+    ------------
+    || uid  || created date || priority || eta  || finish date  || remainder    || status   || task desc    ||
+
+    status here will store the status of the task. the possible values are {not started, in progresss blocked, finished }. 
+    Priority can be implemented by a simple numerical value. To keep it simple, we can allow user to choose a number between 1 to 5. which can translate to { lowest, low, normal, high, realtime }. 
+    remainder date will set a remainder for the task. user will be notified of the task. 
+
+Thats all the tables we might need. 
+
+=============================================================================================
+
+Table Models
+------------
+
+This is a layer for doing crud operations. Ideally this iwll be stored procedure in the sql database. But I don't have so much of know-how yet, so will put all of this in this layer. 
+
+For each table, we will add a Create, drop, insert, delete, select, update function. Depending on the functionality, we can add more. 
+
+
+=============================================================================================
+
+Object models
+----------------
+
+Objects that will be used by the application. The table model will take the objects and write it tot database. This layer of abstraction will provide us with the ability to decouple the model with the tables. 
+
+We can combine the tables to create the kind of objects we want. 
+
+In our case, we will be using the objects with fields directly corelating with the tables, as we don't need any special objects. 
+
+=============================================================================================
+
+Model
+-----------
+
+Technically all the above layer is part of model. We just created sub layer to ease the task of implementation. This layer is to contain the main bussiness logic. In our case, things like checking if the user has logged in, which views to display, routing input and output etc. 
+
+=============================================================================================
+
+view and view-model
+-------------------
+
+web pages with views. we need to figure out a way to get objects from models in php, and display in html. Decouple model from view would be best. But this will be at a later time. 
+
+We can provide ways to sort the alist by different criteria
+
+
